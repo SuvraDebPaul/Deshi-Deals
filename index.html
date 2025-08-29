@@ -30,7 +30,7 @@
         </div>
       </nav>
     </header>
-    <main>
+    <main class="bg-slate-50">
       <section
         class="banner flex flex-col items-center bg-gradient-to-t from-pink-200 from-0% to-white to-100% relative h-[800px]"
       >
@@ -285,10 +285,63 @@
             </div>
           </div>
         </section>
-        <aside id="cart-box" class="col-span-3">Cart</aside>
+        <aside id="cart-box" class="col-span-3 mt-19">
+          <div class="coupon bg-white px-10 py-5 rounded-xl">
+            <h2 class="mb-2 font-bold">Have coupon ?</h2>
+            <div class="join">
+              <input class="input join-item" placeholder="Coupon Code" />
+              <button class="btn btn-secondary join-item rounded-r-md">
+                Apply
+              </button>
+            </div>
+          </div>
+          <div
+            class="cart-container bg-white my-10 p-5 pb-1 rounded-xl h-[87.5%]"
+          >
+            <!-- Cart No. 1 -->
+            <div
+              class="cart-item flex justify-around items-center bg-slate-100 rounded-xl py-3 mb-5"
+            >
+              <img src="assets/kitchen-1.png" alt="" class="w-1/4" />
+              <div>
+                <h2 class="mb-4 font-bold">K. Accessories</h2>
+                <p class="text-gray-500">39.00<span> TK</span></p>
+              </div>
+            </div>
+            <!-- Cart No. 1 -->
+            <div
+              class="cart-item flex justify-around items-center bg-slate-100 rounded-xl py-3 mb-5"
+            >
+              <img src="assets/kitchen-1.png" alt="" class="w-1/4" />
+              <div>
+                <h2 class="mb-4 font-bold">K. Accessories</h2>
+                <p class="text-gray-500">39.00<span> TK</span></p>
+              </div>
+            </div>
+            <!-- Cart No. 1 -->
+            <div
+              class="cart-item flex justify-around items-center bg-slate-100 rounded-xl py-3 mb-5"
+            >
+              <img src="assets/kitchen-1.png" alt="" class="w-1/4" />
+              <div>
+                <h2 class="mb-4 font-bold">K. Accessories</h2>
+                <p class="text-gray-500">39.00<span> TK</span></p>
+              </div>
+            </div>
+
+            <div class="pricing border-y-1 border-gray-300 py-5 my-10">
+              <h2>Total Price: <span>257.00</span>TK</h2>
+              <h2>Discount: <span>51.40</span>TK</h2>
+              <h2>Total: <span>205.60</span>TK</h2>
+            </div>
+
+            <button type="button" class="btn btn-secondary btn-block mb-10">
+              Make Purchase
+            </button>
+          </div>
+        </aside>
       </section>
     </main>
-    <footer></footer>
     <script src="./script/index.js"></script>
   </body>
 </html>
