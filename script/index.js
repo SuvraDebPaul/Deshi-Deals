@@ -34,29 +34,40 @@ for (const btn of buttonCart) {
 
 function discountCalculation() {
   document.getElementById("coupon-apply").addEventListener("click", (e) => {
-    const couponCode = document.getElementById("coupon").value.trim();
-    if ("sell200" === couponCode.toLowerCase()) {
-      discountFactor = 0.8;
-      grandTotalPrice = totalPrice * discountFactor;
-      discountPrice = totalPrice - grandTotalPrice;
+    if (totalPrice >= 200) {
+      const couponCode = document.getElementById("coupon").value.trim();
+      if ("sell200" === couponCode.toLowerCase()) {
+        discountFactor = 0.8;
+        grandTotalPrice = totalPrice * discountFactor;
+        discountPrice = totalPrice - grandTotalPrice;
+      } else {
+        discountFactor = 1;
+        grandTotalPrice = totalPrice * discountFactor;
+        discountPrice = totalPrice - grandTotalPrice;
+      }
+      const grndDisplayPrice = grandTotalPrice.toFixed(2);
+      document.getElementById("grand-total-price").innerText = grndDisplayPrice;
+      const displayDiscointPrice = discountPrice.toFixed(2);
+      document.getElementById("discount-price").innerText =
+        displayDiscointPrice;
+      document.getElementById("coupon").value = "";
+      document.getElementById("coupon-heading").innerText =
+        "Coupon Code Applied";
     } else {
-      discountFactor = 1;
-      grandTotalPrice = totalPrice * discountFactor;
-      discountPrice = totalPrice - grandTotalPrice;
+      console.log("Please Buy More");
     }
-    const grndDisplayPrice = grandTotalPrice.toFixed(2);
-    document.getElementById("grand-total-price").innerText = grndDisplayPrice;
-    const displayDiscointPrice = discountPrice.toFixed(2);
-    document.getElementById("discount-price").innerText = displayDiscointPrice;
-    document.getElementById("coupon").value = "";
   });
 }
 
 function updateCart(itemPrice) {
   totalPrice += itemPrice;
   grandTotalPrice = totalPrice;
+  grandTotalPrice = totalPrice * discountFactor;
+  discountPrice = totalPrice - grandTotalPrice;
   const displayPrice = totalPrice.toFixed(2);
   const grndDisplayPrice = grandTotalPrice.toFixed(2);
+  const displayDiscointPrice = discountPrice.toFixed(2);
   document.getElementById("total-price").innerText = displayPrice;
   document.getElementById("grand-total-price").innerText = grndDisplayPrice;
+  document.getElementById("discount-price").innerText = displayDiscointPrice;
 }
